@@ -1,8 +1,15 @@
 .meetup-list-item {
   color: $dark-grey;
   border: 2px solid $light-grey;
-  @include transition (color .2s ease-in-out);
   margin-bottom: 1em;
+  
+  a {
+    border: none;
+
+    &:hover {
+      border: none;
+    }
+  }
   
   > div {
     padding: .2em .2em;
