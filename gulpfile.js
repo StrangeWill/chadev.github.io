@@ -67,6 +67,8 @@ gulp.task('default', ['imagemin', 'browser-sync'], function () {
         '*.json',
         '_includes/*.html',
         '_layouts/*.html',
+        '_plugins/**/*',
+        '_meetups/**/*',
         '_data/*.yml'
     ], ['jekyll-rebuild']);
 });

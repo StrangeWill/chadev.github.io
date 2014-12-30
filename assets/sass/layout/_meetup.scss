@@ -1,0 +1,59 @@
+.meetup-list-item {
+  color: $dark-grey;
+  border: 2px solid $light-grey;
+  @include transition (color .2s ease-in-out);
+  margin-bottom: 1em;
+  
+  > div {
+    padding: .2em .2em;
+    
+    &.meetup-info {
+      border-bottom: 2px solid $light-grey;
+      padding: 0;
+      
+      > span {
+        display: inline-block;
+        font-size: 0.75em;
+        margin: 0 .4em;
+      }
+    }
+    
+    &.clear { padding: 0; }
+    
+    &.meetup-image {
+      border-right: 2px solid $light-grey;
+      margin-right: .4em;
+      padding: 0;
+      float: left;
+      
+      > img {
+        height: 125px;
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+
+.meetup-title {
+  font-size: 1.35em;
+  font-weight: 300;
+  line-height: 1.2;
+  border-bottom: 2px solid $light-grey;
+}
+.meetup-location {
+
+}
+
+.meetup-presenter {
+
+}
+
+.meetup-description {
+  font-size: 0.85em;
+  margin: .2em .2em;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+}
