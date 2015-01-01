@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{% for section in site.data.resources %}
+<h3>{{section.name}}</h3>
+  {% for resource in section.resources %}
+    <div>
+      <a href="({{ resource.url }})">{{ resource.name }}</a>
+    </div>
+  {% endfor %}
+{% endfor %}
