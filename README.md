@@ -30,14 +30,19 @@ Simply visit [nodejs.org](http://nodejs.org) and click on the big green “Insta
 $ npm install -g gulp
 ~~~
 
-###Install Jekyll
+###Install Bundler
 
 ~~~ sh
-$ gem install jekyll
+$ gem install bundler
 ~~~
 
+###Install Ruby Depenencies
 
-###Install Dependencies
+~~~ sh
+$ bundle install
+~~~
+
+###Install Node Dependencies
 
 Make sure you're in the root project folder.
 
@@ -50,3 +55,7 @@ $ npm install
 ~~~ sh
 $ gulp
 ~~~
+
+##Meetup Integration
+
+In order to pull from Meetup you need an API key configured, set the environment variable 'MEETUP_API' to your key, otherwise the meetup API integration will be skipped.

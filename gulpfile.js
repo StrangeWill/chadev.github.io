@@ -15,7 +15,7 @@ var messages = {
 // build the jekyll site
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn(batchify('jekyll'), ['build'], {stdio: 'inherit'})
+    return cp.spawn(batchify('jekyll'), ['build', '--trace'], {stdio: 'inherit'})
         .on('close', done);
 });
 

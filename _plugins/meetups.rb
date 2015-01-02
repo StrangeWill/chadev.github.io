@@ -1,27 +1,41 @@
 require 'json'
 require 'yaml'
+require 'rMeetup'
 
 module Meetups
   class Generator < Jekyll::Generator
     safe true
   
     def generate(site)
-      meetups_path = '_meetups/*/'
-      meetups = Dir[meetups_path].map{ |a| read_config(a) }
-      
+      api_key = ENV['MEETUP_API']
+      if api_key.nil?
+        print 'No Meetup API Key found, skipping meetup integration.'
+        return
+      end
+      client = RMeetup::Client.new do |config|
+        config.api_key = api_key
+      end
+
+      group_results = client.fetch(:groups, { :group_urlname => 'chadevs' })
+      results = client.fetch(:events, {
+        :group_id => group_results[0].id,
+        :status => 'upcoming,past' })
+      meetups = []
+      results.reverse.each do |result|
+        meetups.push({
+          'title' => result.name,
+          'presenter' => '',
+          'date' => result.time,
+          'location' => get_venue(result),
+          'signup' => result.event_url,
+          'description' => result.event.has_key?('description') ? result.description : '' })
+      end
       page = site.pages.detect { |page| page.name == 'meetups.html' }
       page.data['meetups'] = meetups
     end
     
-    def read_config(path)
-      file_path = "#{path}about.yml"
-      if !File.exist?(file_path)
-        raise "Meetup about.yml not found at expecting path '#{file_path}'."
-      end
-      
-      config = YAML.load_file(file_path)
-      config['image'] = "#{path}#{config['image']}".sub(/^_meetups/, 'meetups')
-      config
+    def get_venue(result)
+      "#{result.venue.name} #{result.venue.address_1} #{result.venue.address_2} #{result.venue.city}"
     end
   end
 end
