@@ -1,11 +1,10 @@
-language: node_js
+language: ruby
 rvm:
   - 2.0.0
-node_js:
-  - "0.11"
 before_script:
   - npm install -g gulp
-  - gem install jekyll
+  - gem install bundler
+  - bundle install
   - npm install
   - chmod -R +x ./_scripts/ci/
 script: ./_scripts/ci/run_build.sh
