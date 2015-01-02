@@ -1,6 +1,6 @@
 require 'json'
 require 'yaml'
-require 'rMeetup'
+require 'rmeetup'
 
 module Meetups
   class Generator < Jekyll::Generator
