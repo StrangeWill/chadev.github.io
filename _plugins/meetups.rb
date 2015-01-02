@@ -12,6 +12,12 @@ module Meetups
         print 'No Meetup API Key found, skipping meetup integration.'
         return
       end
+      
+      page = site.pages.detect { |page| page.name == 'meetups.html' }
+      page.data['meetups'] = get_meetup_info(api_key)
+    end
+    
+    def get_meetup_info(api_key)
       client = RMeetup::Client.new do |config|
         config.api_key = api_key
       end
@@ -22,16 +28,20 @@ module Meetups
         :status => 'upcoming,past' })
       meetups = []
       results.reverse.each do |result|
-        meetups.push({
-          'title' => result.name,
-          'presenter' => '',
-          'date' => result.time,
-          'location' => get_venue(result),
-          'signup' => result.event_url,
-          'description' => result.event.has_key?('description') ? result.description : '' })
+        meetups.push(map_event_result(result))
       end
-      page = site.pages.detect { |page| page.name == 'meetups.html' }
-      page.data['meetups'] = meetups
+      meetups
+    end
+    
+    def map_event_result(result)
+      {
+        'title' => result.name,
+        'presenter' => '',
+        'date' => result.time,
+        'location' => get_venue(result),
+        'signup' => result.event_url,
+        'description' => result.event.has_key?('description') ? result.description : ''
+      }
     end
     
     def get_venue(result)
