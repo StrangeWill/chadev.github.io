@@ -34,7 +34,8 @@ exclude:
     -   bower.json
     -   gulpfile.js
     -   package.json
-
+    -   vendor
+    
 sass:
   sass_dir: css
 

@@ -39,10 +39,7 @@ $ jekyll serve
 
 ###Open Browser
 
-<<<<<<< HEAD
-~~~ sh
-$ gulp
-~~~
+Navigate to http://localhost:4000/
 
 ##Getting started with Travis CI
 
@@ -54,5 +51,4 @@ $ gulp
 * GH_USER (optional) - User to commit as. Default: Travis-CI
 * GH_EMAIL (optional) - E-mail to commit as. Default: travis@travis-ci.org
 =======
-Navigate to http://localhost:4000/
->>>>>>> master
+
