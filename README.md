@@ -25,6 +25,12 @@ To replicate our development environment a number of open source tools are requi
 $ gem install bundler
 ~~~
 
+###Install Ruby Depenencies
+
+~~~ sh
+$ bundle install
+~~~
+
 ###Have bundler resolve your dependencies.
 
 ~~~ sh
@@ -41,6 +47,10 @@ $ jekyll serve
 
 Navigate to http://localhost:4000/
 
+##Meetup Integration
+
+In order to pull from Meetup you need an API key configured, set the environment variable 'MEETUP_API' to your key, otherwise the meetup API integration will be skipped.
+
 ##Getting started with Travis CI
 
 ###Environment Variables To Configure On Travis
@@ -50,5 +60,3 @@ Navigate to http://localhost:4000/
 * GH_BRANCH (optional) - The branch that Travis will push the resulting site to. Default: gh-pages
 * GH_USER (optional) - User to commit as. Default: Travis-CI
 * GH_EMAIL (optional) - E-mail to commit as. Default: travis@travis-ci.org
-=======
-

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Meetups
+---
+
+{% for meetup in page.meetups %}
+  <section class="meetup-list-item">
+    {% if meetup.image %}
+      <div class="meetup-image"><img src="/{{meetup.image}}"></div>
+    {% endif %}
+    <h2 class="meetup-title"><a href="{{meetup.signup}}">{{ meetup.title }}</a></h2>
+    <div class="meetup-info">
+      <span>{{ meetup.presenter }}</span>
+      <span>{{ meetup.date }}</span>
+      <span>{{ meetup.location }}</span>
+    </div>
+    <div class="meetup-description">{{ meetup.description }}</div>
+    <div class="clear"></div>
+  </section>
+{% endfor %}

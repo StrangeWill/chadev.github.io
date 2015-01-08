@@ -7,6 +7,8 @@ url: http://chadev.github.io
 links:
   - title: Devs
     url: /devs
+  - title: Meetups
+    url: /meetups
   - title: Groups
     url: /groups
   - title: Events
@@ -21,6 +23,8 @@ collections:
   groups:
     output: false
   devs:
+    output: false
+  meetups:
     output: false
 
 # Build settings
