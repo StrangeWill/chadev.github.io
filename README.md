@@ -25,23 +25,12 @@ To replicate our development environment a number of open source tools are requi
 $ gem install bundler
 ~~~
 
-<<<<<<< HEAD
-###Install Bundler
-
-~~~ sh
-$ gem install bundler
-~~~
-
 ###Install Ruby Depenencies
 
 ~~~ sh
 $ bundle install
 ~~~
 
-###Install Node Dependencies
-
-Make sure you're in the root project folder.
-=======
 ###Have bundler resolve your dependencies.
 
 ~~~ sh
@@ -49,7 +38,6 @@ $ bundle install
 ~~~
 
 ###Run Jekyll Server
->>>>>>> master
 
 ~~~ sh
 $ jekyll serve
@@ -57,14 +45,9 @@ $ jekyll serve
 
 ###Open Browser
 
-<<<<<<< HEAD
-~~~ sh
-$ gulp
-~~~
+=======
+Navigate to http://localhost:4000/
 
 ##Meetup Integration
 
 In order to pull from Meetup you need an API key configured, set the environment variable 'MEETUP_API' to your key, otherwise the meetup API integration will be skipped.
-=======
-Navigate to http://localhost:4000/
->>>>>>> master
