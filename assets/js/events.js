@@ -94,7 +94,7 @@ function init() {
     window.cal.innerHTML   =   '';
     window.body.classList.add('loading');
     console.log("init running");
-    gapi.client.setApiKey('AIzaSyCp_IflIV150pu3Quu-XDIaM7tMYlfO4DQ');
+    gapi.client.setApiKey('AIzaSyAzA1Ga3j-fytsk1xmYkYdCqNhDDcKSW9E');
     gapi.client.load('calendar', 'v3').then(execute);
 }
 
