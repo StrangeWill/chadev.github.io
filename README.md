@@ -15,21 +15,17 @@ Feel free to contact us via the [#chadev IRC channel on freenode](https://kiwiir
 
 To replicate our development environment a number of open source tools are required, specifically:
 
-* [Node](http://nodejs.org)
-* [Gulp](http://gulpjs.com)
 * [Jekyll](http://jekyllrb.com)
 
 ##Getting Started
 
-###Install Node
-Simply visit [nodejs.org](http://nodejs.org) and click on the big green “Install” button.
-
-###Install Gulp Globally
+###Install bundler
 
 ~~~ sh
-$ npm install -g gulp
+$ gem install bundler
 ~~~
 
+<<<<<<< HEAD
 ###Install Bundler
 
 ~~~ sh
@@ -45,13 +41,23 @@ $ bundle install
 ###Install Node Dependencies
 
 Make sure you're in the root project folder.
+=======
+###Have bundler resolve your dependencies.
 
 ~~~ sh
-$ npm install
+$ bundle install
 ~~~
 
-###Run Gulp
+###Run Jekyll Server
+>>>>>>> master
 
+~~~ sh
+$ jekyll serve
+~~~
+
+###Open Browser
+
+<<<<<<< HEAD
 ~~~ sh
 $ gulp
 ~~~
@@ -59,3 +65,6 @@ $ gulp
 ##Meetup Integration
 
 In order to pull from Meetup you need an API key configured, set the environment variable 'MEETUP_API' to your key, otherwise the meetup API integration will be skipped.
+=======
+Navigate to http://localhost:4000/
+>>>>>>> master
